@@ -1,5 +1,5 @@
 all:
-	elm-make Main.elm --output index.html
+	elm-make Main.elm --output schlangi.html
 
 clean:
-	rm -f index.html
+	rm -f schlangi.html
