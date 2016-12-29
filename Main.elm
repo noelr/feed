@@ -70,7 +70,7 @@ mouseButtonAttribs s =
 
 getLog : Cmd Msg
 getLog =
-  Http.getString "http://localhost:4002/"
+  Http.getString "/tiny-append"
   |> Http.send NewLog
 
 
@@ -84,7 +84,7 @@ requestLine line =
   Http.request
     { method = "POST"
     , headers = []
-    , url = "http://localhost:4002/append?line=" ++ line
+    , url = "/tiny-append/append?line=" ++ line
     , body = Http.emptyBody
     , expect = Http.expectStringResponse (\_ -> Ok ())
     , timeout = Nothing
